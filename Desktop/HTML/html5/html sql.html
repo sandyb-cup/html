@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    <h1>数据库核心方法</h1>
+    openDatabase 这个方法在现有的数据库中或者是兴建的数据库中创建一个对像
+    transaction 这个方法能够控制一个事物 以及基于这个事物进行提交或者回滚
+    executesql 这句是执行实际的sql查询
+</pre>
+<h2>打开数据库</h2>
+<pre>
+    var db = openDatabase('mysql','1.0','TestDb','2*2048*2048')
+    <span style="color: #ffdfe4">opendatabase5个参数说明</span>
+    数据库名称
+    数据库版本号
+    数据库描述
+    数据库的储存空间大小
+    创建回调
+
+</pre>
+</body>
+</html>

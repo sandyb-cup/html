@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html 拖放实例</title>
+    <style>
+        div{
+            height: 300px;
+            width: 50%;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+</div>
+<br>
+<script>
+    function allowDrop(ev){
+        ev.preventDefault()
+    //   preventDefault防止 默认参数是不允许元素移动的
+    //   因为默认的 无法将函数元素防止到其他元素当中 所以要防止元素的默认处理方式使用上面方法
+    }
+    function drag(ev){
+        ev.dataTransfer.setData("text",ev.target.id)
+        // alert(ev.target.id)
+        // transfer转让 通过ev.dataTransfer.setData方法设置被拖动数据的类型和值
+        // 通过ev 函数中的target.id属性获取移动属性的id值
+    }
+    function drop(ev){
+        ev.preventDefault()
+        //防止默认属性限制 -->不允许拖动
+        var data = ev.dataTransfer.getData('text')
+        alert(data)
+        // ev.dataTransfer可以获得ev.dataTransfer.setData()方法中放置的任何值
+        ev.target.appendChild(document.getElementById(data))
+        // 在元素中添加一个子元素 id为dataTransfer.setDate()放置的id=drag1
+
+    }
+</script>
+<em>注意在上面的实例中调用了id属性进行定位 所以下面的属性中要定义id属性</em>
+<br>
+设置draggable属性设置元素是可以拖动的
+<div id='div1' ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id='drag1' src="../html/images/iphone12pro.png" draggable="true" ondragstart="drag(event)" width="800px" height="250px">
+</body>
+</html>

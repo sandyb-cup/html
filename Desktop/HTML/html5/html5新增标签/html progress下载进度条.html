@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>progress进度条案例</title>
+</head>
+<body>
+<!--<progress id='progress' value="0" max="100"></progress>-->
+<!--<button type="button" onclick="DownLoad(100)" style="border-radius: 3px;border:1px solid black">下载</button>-->
+<script>
+    function DownLoad(s){
+        if(s==0){alert('下载完成')}
+        else{
+            cut_time = s-1;
+            var c = 100-cut_time
+            var progress = document.getElementById('progress')
+            progress.value=c
+            setTimeout("DownLoad(cut_time)",1000)
+        }
+    }
+</script>
+<progress id='progress' value="0" max="100"></progress>
+<button type="button" onclick="DownLoad(100)" style="border-radius: 3px;border:1px solid black">下载</button>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用arc()函数画圆</title>
+
+</head>
+<body>
+<canvas id ='mycanvas' style="border: 1px solid red;height: 500px;width: 50%">
+    你的浏览器不支持画布显示
+</canvas>
+<script>
+    var canvas = document.getElementById('mycanvas')
+    var get = canvas.getContext('2d');
+    get.beginPath()
+    get.arc(95,50,40,0,2*Math.PI);
+    get.stroke()
+</script>
+</body>
+</html>

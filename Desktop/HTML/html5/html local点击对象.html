@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function clickCount(){
+        if(typeof (Storage)!=='undefined'){
+            if (localStorage.clickcount){
+                // 当localStorage.clickcount有值的时候它的触发下面条件
+                localStorage.clickcount = Number(localStorage.clickcount)+1;
+            }
+            else{
+                //第一次点击的时候触发下面条件
+                localStorage.clickcount = 1
+            }
+            document.getElementById('result').innerHTML=localStorage.clickcount
+        }
+        else {
+            document.getElementById('result').innerHTML='你的浏览器不支持local储存'
+        }
+    }
+    function clear_count(){
+        localStorage.removeItem('clickcount')
+
+        if(typeof (localStorage.clickcount)=='undefined'){
+            localStorage.clickcount = 0
+        }
+        document.getElementById('result').innerHTML=localStorage.clickcount
+    }
+</script>
+
+<button type="button" onclick="clickCount()">
+    按钮
+</button>
+<button type="button" onclick="clear_count()">清除按钮</button>
+<p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>线条画图</title>
+
+</head>
+<body>
+<canvas id = 'canvas' style='border: 1px solid red'>
+    你的浏览器不支持cavavs显示
+</canvas>
+<script>
+    var canvavs = document.getElementById('canvas')
+    var get = canvavs.getContext('2d')
+    get.moveTo(0,0)
+    //定义开始坐标
+    get.lineTo(70,120)
+    //定义结束坐标
+    get.stroke()
+//    利用stroke来绘制线条
+</script>
+</body>
+</html>

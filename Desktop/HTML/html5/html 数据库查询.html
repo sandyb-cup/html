@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据库查询</title>
+</head>
+<body>
+<script>
+    var db = openDatabase('mydb','1.0','Testdb','2*1024*1024')
+    //后面执行数据库回调
+    db.transaction(function (tx){
+        tx.executeSql('create table IF NOT EXISTS LOGS (id unique,log)')
+    })
+//    上面的语句会创建一个logs的表
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html web储存</title>
+</head>
+<body>
+<pre style="font-weight: bolder">
+    之前的web储存的形式是cookie但是web储存形式更加方便快捷的特点并且更加安全之后就使用了web
+    <span style="color: red">web储存是储存在web web网页的数据只允许访问网站的时候获取(安全性)</span>
+    web储存的形式是以键值对的形式存在的(便捷性)
+</pre>
+<h1>客户端储存的两种方式</h1>
+<p style="white-space: pre-line">
+    <h3>localstorage储存</h3>
+    <span>这种储存形式长期储存网站数据 如果要删除数据直接使用手动删除即可</span>
+    <br>
+    <h3>sessionstorage储存</h3>
+    <span>这种储存形式 储存在网页上面如果网页关闭数据将会自动删除</span>
+</p>
+<h1>检查浏览器是否支持storage储存形式</h1>
+<script>
+    if(typeof (Storage)!=="undefined"){
+    //    一些代码
+    }
+    else{
+        // 浏览器不支持localstorage 或者是sessionstorage储存形式
+    }
+</script>
+
+</body>
+</html>

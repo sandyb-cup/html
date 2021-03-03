@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas 文本</title>
+</head>
+<body>
+<canvas id="canvas" style="width: 50%;height: 500px;border: 1px solid red">
+    你的浏览器不支持canvas显示
+</canvas>
+<script>
+    var canvas = document.getElementById('canvas')
+    var get = canvas.getContext('2d')
+    get.font='30px Arial'
+    get.fillText('Hello world',20,80)
+    //    后面的数字是文字的起始坐标点位置
+</script>
+<canvas id="mycanvas" style="width: 50%;height: 500px;border: 1px solid red">
+    画布显示
+</canvas>
+<script>
+    var canvas2 = document.getElementById('mycanvas')
+    var get = canvas2.getContext('2d')
+    get.font = '30px Arial'
+    get.strokeText('Hello world',40,50)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html 数据库插入数据</title>
+
+</head>
+<body>
+<script>
+    var db = openDatabase('mydb','1.0','Testdb','2*1024*1024')
+    //插入数据
+    db.transaction(function (tx){
+        tx.executeSql('insert into LOGS (id,log) values (1,"百度")')
+        tx.executeSql('insert into LOGS (id,log) values (2,"腾讯")')
+        // 下面是动态获取数据
+        // tx.executeSql('insert into LOGS (id,log) values (?,?)',[e_id, e_info])
+    //    上面的 e_id e_log是外部变量？会映射数组中的数据给？
+    })
+//读取数据
+    db.transaction(function (tx){
+        tx.executeSql(
+            "select * from LOGS",[],function (tx,results){
+                var len = results.rows.length, i;
+                mes = '<p>查询条数'+len+'</p>'
+                document.getElementById('result').innerHTML=mes
+                for(i=0;i<len;i++){
+                    msg = '<p><b>'+results.rows.item(i).log +'</b></p>';
+                    document.querySelector('#result').innerHTML+=msg;
+                }
+            },null)
+    })
+</script>
+<div id="result"></div>
+</body>
+
+</html>

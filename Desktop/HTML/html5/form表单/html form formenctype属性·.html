@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formenctype属性</title>
+    <style>
+        i {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    姓名:<input type="text">
+    年龄:<input type="text" formenctype="multipart/form-data">
+</form>
+<em>
+    在前面的 <i>姓名</i>提交格式中 提交之后它的编码格式是默认的格式
+    <br>
+    在后面的 <i>年龄</i>提交格式中应为设置了formenctype 它的编码格式就是form-data
+    <br>
+    这个属性覆盖了form的enctype属性
+</em>
+</body>
+</html>

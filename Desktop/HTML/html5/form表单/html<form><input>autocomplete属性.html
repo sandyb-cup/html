@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input autocomplete属性</title>
+
+</head>
+<body>
+<form action="">
+    user:<input type="text" autocomplete="on" required="required">
+<!--    使用了required属性如果没有填写相关信息html会自动提示错误-->
+    password: <input type="password" autocomplete="on" required="required">
+<!--    autocomplete属性这个属性会自己填充相关信息 前提是之前输入过该信息储存在cookie中-->
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

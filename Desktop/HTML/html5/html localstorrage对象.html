@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>localstorage对象</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    function loacl(){
+        if (typeof (Storage)!=="undefined"){
+            localStorage.username = "张鑫"
+            //函数解释locakStorage.username 调用localsrorage函数使username 的值为"张鑫"
+            document.getElementById('result').innerHTML=localStorage.username
+        }
+        else{
+            document.getElementById('result').innerHTML='你的浏览器不支持localstorage储存'
+        }
+    }
+    function remove_local(){
+        if (typeof (Storage)!=="undefined"){
+            //使用removeItem还移除数据储存的内容
+            localStorage.removeItem('username')
+            document.getElementById('result').innerHTML=localStorage.username
+        }
+        else{
+            document.getElementById('result').innerHTML='你的浏览器不支持localStorage属性储存'
+        }
+    }
+</script>
+<button type="button" onclick="loacl()">添加属性</button>
+<button type="button" onclick="remove_local()">移除属性</button>
+<pre>
+    <p style="font-weight: bold">不管是localsrorage 还是localstorage他们使用的API相同的常用的有下面几个</p>
+    保存数据； localstorage.setItem(key,value)
+    读取数据:localsrorage.getItem(key)
+    删除单个数据:localstorage.removeItem(key)
+    删除所有数据:localstorage.clear();
+    得到索引的key:localStorage.key(index)
+</pre>
+</body>
+</html>

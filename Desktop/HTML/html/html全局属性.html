@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html全局属性</title>
+</head>
+<body>
+<pre>
+    <em>accesskey:</em><strong>设置访问元素的快捷键</strong>
+    <em>contenteditable:</em><strong>设置一个可编辑段落</strong>
+    <em>data-*</em><strong>使用data-*属性来自定义数据</strong>
+    <em>hidden</em><strong>使用hidder属性使元素隐藏</strong>
+    <em>spellcheck</em><strong>使用spellcheck检查元素是否拼写错误</strong>
+    <em>tabindex</em><strong>设置tab键的控制次序按一下tab键控制搜素元素位置</strong>
+    <em>title属性</em><strong>用来提供文本的额外信息</strong>
+    <em>还有一个translate属性 什么浏览器都不支持</em>
+</pre>
+<h1>accessksy案例</h1>
+<a href="https://www.baidu.com" style="text-decoration: none;color: black" accesskey="h">百度 (mac:control+option windows:Shift+Alt)</a>
+<h1>contenteditable案例</h1>
+<p contenteditable="true">这段文字可以进行修改</p>
+
+<h1>data-*实例</h1>
+<script>
+    function animal(animal){
+        var aniumalAttr = animal.getAttribute('data-animal')
+        //getAttribute获取元素属性
+        alert(animal.innerHTML+'很'+aniumalAttr)
+    }
+</script>
+点击一个物种看他们是什么属性
+<ul>
+    <li onclick="animal(this)" data-animal="肥大" id="大象">大象</li>
+    <li onclick="animal(this)" data-animal="机灵" id="猴子">猴子</li>
+    <li onclick="animal(this)" data-animal="老鼠" id="老鼠">胆小</li>
+</ul>
+
+<h1>hidder隐藏元素实例</h1>
+<div>
+    <p hidden="hidden">这是一个隐藏元素</p>
+    <p>这是显示元素</p>
+</div>
+
+<h1>spellcheck检查单词拼写</h1>
+<p contenteditable="true" spellcheck="true">这是一个可编辑的段落</p>
+<i>如果单词拼写错误会有红色下标虚线</i>
+
+<h1>tabindex实例</h1>
+<a href="https://www.baidu.com" tabindex="1">百度</a>
+<a href="https://www.google.com" tabindex="2">谷歌</a>
+<a href="https://www.tensent.com" tabindex="3">腾讯</a>
+</body>
+
+<h1>title属性实例</h1>
+<p title="世界卫生组织">WHO</p>
+<p><abbr title="世界卫生组织">WHO</abbr>成立于1948年</p>
+</html>

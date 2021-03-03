@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画布显示图像</title>
+</head>
+<body>
+<p>img元素显示</p>
+<img id='img' src="images/scream.jpg" alt="scream" width="220" height="277">
+<p>canvas元素显示</p>
+<canvas id ='show_image' width="240px" height="300px" style="border: 1px solid #ffdfe4">
+    注意在canvas元素上面填写属性时 style 里面的属性是元素的显示效果设置之后图片显示可能会出现变形
+</canvas>
+<p>width height属性最好还是在style写</p>
+<script>
+    var image = document.getElementById('show_image')
+    var text = image.getContext('2d')
+    var img = document.getElementById('img')
+    img.onload = function (){
+        text.drawImage(img,10,10)
+    //    后面的参数是图片的起始点位置参数
+    }
+</script>
+</body>
+</html>

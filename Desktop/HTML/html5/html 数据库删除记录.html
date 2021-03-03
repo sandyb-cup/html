@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据库删除记录</title>
+
+</head>
+<body>
+<script>
+    var db = openDatabase('mydb','1.0','Testdb','2*1024*1024')
+//    后面执行回调函数
+    db.transaction(function (tx){
+        tx.executeSql('DELETE from LOGS WHERE id=1')
+        alert('删除数据成功')
+    })
+    db.transaction(function (tx){
+        tx.executeSql('select * from LOGS',[],function (tx, results){
+            var len = results.rows.length, i;
+
+            // 通过results.rows.length方法获取数据的条数
+            mas ='<p>查询条数'+len+'</p>'
+            document.querySelector('#status').innerHTML+=mas
+            for(i=0;i<len;i++){
+                //通过resylts.rows.item获取数据库中的各个值
+                mas='<p><b>'+results.rows.item(i).log+'</b></p>';
+                document.querySelector('#status').innerHTML+=mas
+            }
+        },null)
+    })
+</script>
+
+<div id="status">状态信息</div>
+</body>
+</html>

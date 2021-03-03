@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html input range属性</title>
+</head>
+<body>
+<input type="range" max="10" min="0" value="2" id="rangeValue">
+<button type="submit" onclick="getValue()">提交</button>
+滑动选取数字
+<p>
+    注意range属性能定义滑动块的默认值
+</p>
+<script>
+    function getValue(){
+        var value = document.getElementById('rangeValue')
+        alert(value.value)
+    }
+</script>
+</body>
+</html>

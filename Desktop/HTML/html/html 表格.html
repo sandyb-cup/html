@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table表格</title>
+</head>
+<body>
+<h1>表格创建table tr td 属性使用</h1>
+<p>表格的由若干行(由<tr>组成的标签)每个干行分成若干个标签(<td>标签定义)td 表示tabledata 即数据单元格内容 数据单元格可以用来表示图片 列表段落 水平线 表格等等</p>
+<p style="color:slategray">如果想实现没有边框的表格显示 <span style="color: red">border='0'</span></p>
+<table border="1" style="border-collapse: collapse">
+<!--    添加表头 <th>-->
+    <tr>
+        <th>header1</th>
+        <th>header2</th>
+        <th>header3</th>
+    </tr>
+<tr>
+    <td>row1, cell1</td>
+    <td>row2, cell2</td>
+</tr>
+    <tr>
+        <td>row2,cell1</td>
+        <td>row2,cell2</td>
+        <td>row2,cell3</td>
+    </tr>
+</table>
+<h1>设置带标签的表格</h1>
+<table border="1" style="border-collapse: collapse">
+<caption style="color: red">这是表格的标题
+</caption>
+    <tr>
+        <td>row1,cell1</td>
+        <td>row2,cell2</td>
+    </tr>
+    <tr>
+        <td>row2,cell1</td>
+        <td>row2,cell2</td>
+    </tr>
+</table>
+<h1>跨行跨列表格设计</h1>
+<table border="1" style="border-collapse: collapse">
+    <caption>
+        跨列表格
+    </caption>
+    <tr>
+        <th>Name</th>
+        <th colspan="2">TelePhone</th>
+    </tr>
+
+    <tr>
+        <td>123</td>
+        <td>123</td>
+        <td>456</td>
+    </tr>
+</table>
+<table border="1" style="border-collapse: collapse">
+    <caption>
+        跨行的表格
+    </caption>
+    <tr>
+        <td rowspan="2">
+            name
+        </td>
+        <td>
+            telephone
+        </td>
+    </tr>
+    <tr>
+        <td>123</td>
+    </tr>
+</table>
+<h1>单元格边距</h1>
+<table border="1" cellpadding="20" style="border-collapse: collapse">
+    <caption>
+        控制单元格边距
+    </caption>
+    <tr>
+        <td>
+            row1,cell1
+        </td>
+        <td>
+            row1,cell2
+        </td>
+    </tr>
+</table>
+<h1>控制格与格之间的距离</h1>
+<table border="1" style="border-collapse: initial" cellspacing="30">
+    <tr>
+        <td>row1,cell1</td>
+        <td>row1,cell2</td>
+    </tr>
+    <tr>
+        <td>row2,cell1</td>
+        <td>row2,cell2</td>
+    </tr>
+</table>
+<h1>
+    定义表格列的组
+</h1>
+<table border="1" style="border-collapse: collapse" cellpadding="30">
+    <colgroup>
+        <col span="2" style="background-color: red">
+        <col style="background-color: springgreen">
+    </colgroup>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>tall</th>
+    </tr>
+    <tr>
+        <td>shi</td>
+        <td>12</td>
+        <td>130</td>
+    </tr>
+    <tr>
+        <td>hua</td>
+        <td>12</td>
+        <td>135</td>
+    </tr>
+</table>
+<p><h2>拓展</h2>表格有thead tbody tfoot属性这些属性并不能改变表格的布局但是能通过css样式设置来改变它的显示样式</p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html 数据库的改</title>
+</head>
+<body>
+<script>
+    var db=openDatabase('mydb','1.0','Testdb','2*1024*1024')
+    db.transaction(function (tx){
+        tx.executeSql('update LOGS set log=\'阿里巴巴\' where id=2');
+        alert('修改成功')
+    })
+
+    db.transaction(function (tx){
+        tx.executeSql('select * from lOGS',[],function (tx,results){
+            var len = results.rows.length,i
+            for(i=0;i<len;i++){
+                mes = '<p>'+results.rows.item(i).log+'</p>'
+                alert(mes)
+                document.getElementById('result').innerHTML+=mes
+            }
+
+        },null)
+    })
+</script>
+<div id="result"></div>
+</body>
+</html>

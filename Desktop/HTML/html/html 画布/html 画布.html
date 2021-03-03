@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画布创建</title>
+</head>
+<body>
+<canvas id='mycanvas'style="color: red;border: 1px solid greenyellow;width: 50%;height: 500px">
+    你的浏览器不支持canvas属性显示功能
+</canvas>
+<script>
+var c=document.getElementById("mycanvas");
+var ctx=c.getContext("2d");
+//创建context对象
+ctx.fillStyle="#FF0000";
+//设置填充颜色
+ctx.fillRect(0,0,150,75);
+//设置填充边框 这个参数的意思起点是0 0 终点位置是150 75
+</script>
+</body>
+</html>

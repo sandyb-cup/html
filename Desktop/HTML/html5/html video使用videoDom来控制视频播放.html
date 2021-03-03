@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video使用Dom来控制视频播放</title>
+</head>
+<body>
+
+
+<video id='Myvideo' width="300px">
+    <source src="../html/images/视频.mp4" type="video/mp4">
+</video>
+<script>
+    var myvideo = document.getElementById('Myvideo')
+    function playPause(){
+        if(myvideo.paused) {
+            myvideo.play()
+        }
+        else{
+            myvideo.pause();
+        }
+    }
+    function PlayBig(){
+        myvideo.width=1000
+    }
+    function PlaySmall(){
+        myvideo.width=300
+    }
+</script>
+<div>
+    <button type="button" onclick="playPause()">播放/停止</button>
+    <button type="button" onclick="PlayBig()">放大</button>
+    <button type="button" onclick='PlaySmall()'>缩小</button>
+
+</div>
+
+</body>
+</html>

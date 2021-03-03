@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html 画布渐变</title>
+</head>
+<body>
+<canvas id="scanvas"  style="border: 1px red solid;width: 50%;height: 500px">
+
+</canvas>
+<script>
+    var scanvas = document.getElementById('scanvas')
+    var get = scanvas.getContext('2d')
+    // Create gradient
+    //线性渐变
+    var grd=get.createLinearGradient(0,0,200,0);
+    //圆形渐变
+    var grd = get.createRadialGradient(75,50,5,90,60,100)
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    // Fill with gradient
+    get.fillStyle=grd;
+    get.fillRect(10,10,150,80);
+
+</script>
+</body>
+</html>
